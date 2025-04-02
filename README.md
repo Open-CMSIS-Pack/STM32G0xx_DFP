@@ -32,7 +32,7 @@ Add this component to your *csolution project* to connect to CubeMX.
 
 ## Using the development repository
 
-This development repository can be used in a local directory and [mapped as software pack](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-tools.md#install-a-repository) using for example `cpackget` with:
+This development repository can be used in a local directory and [mapped as software pack](https://open-cmsis-pack.github.io/cmsis-toolbox/build-tools/#install-a-repository) using for example `cpackget` with:
 
     cpackget add <path>/Keil.STM32G0xx_DFP.pdsc
 
