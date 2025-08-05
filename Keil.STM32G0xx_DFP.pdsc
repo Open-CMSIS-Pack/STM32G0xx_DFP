@@ -16,6 +16,8 @@
     <release version="2.0.2-dev">
       Active development ...
       Updated documentation references
+      Device support:
+      - Updated SVD files to version 2.0 from STMicroelectronics
     </release>
     <release version="1.5.0" date="2024-02-02">
       Updated STM32Cube FW to STM32Cube_FW_G0_V1.6.0 (HAL V1.4.5).
@@ -216,7 +218,7 @@
         </device>
 
         <!-- *************************  Device 'STM32G030K8Tx'  ***************************** -->
-        <device Dname="STM32G030K8Tx">                     
+        <device Dname="STM32G030K8Tx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00010000" default="1" startup="1"/>
           <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_64.FLM"   start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
@@ -328,7 +330,7 @@
         <!-- *************************  Device 'STM32G031G6Ux'  ***************************** -->
         <device Dname="STM32G031G6Ux">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00008000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_32.FLM"   start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="QFP" n="28"/>
         </device>
@@ -336,7 +338,7 @@
         <!-- *************************  Device 'STM32G031J6Mx'  ***************************** -->
         <device Dname="STM32G031J6Mx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00008000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_32.FLM"   start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="SOP" n="8" name="SO8N"/>
         </device>
@@ -344,7 +346,7 @@
         <!-- *************************  Device 'STM32G031K6Tx'  ***************************** -->
         <device Dname="STM32G031K6Tx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00008000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_32.FLM"   start="0x08000000" size="0x00008000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="QFP" n="32"/>
         </device>
@@ -361,7 +363,7 @@
         <!-- *************************  Device 'STM32G031C8Tx'  ***************************** -->
         <device Dname="STM32G031C8Tx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00010000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_64.FLM"   start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="QFP" n="48"/>
         </device>
@@ -393,7 +395,7 @@
         <!-- *************************  Device 'STM32G031K8Tx'  ***************************** -->
         <device Dname="STM32G031K8Tx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00010000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_64.FLM"   start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="QFP" n="32"/>
         </device>
@@ -401,7 +403,7 @@
         <!-- *************************  Device 'STM32G031K8Ux'  ***************************** -->
         <device Dname="STM32G031K8Ux">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00010000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_64.FLM"   start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="QFP" n="32"/>
         </device>
@@ -409,7 +411,7 @@
         <!-- *************************  Device 'STM32G031Y8Yx'  ***************************** -->
         <device Dname="STM32G031Y8Yx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00010000" default="1" startup="1"/>
-          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/> 
+          <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00002000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_64.FLM"   start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x2000" default="1"/>
           <feature type="CSP" n="18"/>
         </device>
@@ -713,7 +715,7 @@
         </device>
 
         <!-- *************************  Device 'STM32G051K8Ux'  ***************************** -->
-        <device Dname="STM32G051K8Ux">                    
+        <device Dname="STM32G051K8Ux">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00010000" default="1" startup="1"/>
           <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00004800" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_64.FLM"   start="0x08000000" size="0x00010000" RAMstart="0x20000000" RAMsize="0x4800" default="1"/>
@@ -1010,7 +1012,7 @@
         </device>
 
         <!-- *************************  Device 'STM32G071CBUx'  ***************************** -->
-        <device Dname="STM32G071CBUx">                     
+        <device Dname="STM32G071CBUx">
           <memory name="Main_Flash" access="rx"            start="0x08000000" size="0x00020000" default="1" startup="1"/>
           <memory name="SRAM"       access="rwx"           start="0x20000000" size="0x00009000" default="1"/>
           <algorithm name="CMSIS/Flash/STM32G0xx_128.FLM"  start="0x08000000" size="0x00020000" RAMstart="0x20000000" RAMsize="0x8000" default="1"/>
