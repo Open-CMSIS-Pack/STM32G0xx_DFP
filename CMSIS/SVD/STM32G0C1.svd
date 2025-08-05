@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2024 STMicroelectronics.
+Copyright (c) 2025 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2024 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G0C1</name>
-  <version>1.8</version>
+  <version>2.1</version>
   <description>STM32G0C1</description>
   <cpu>
     <name>CM0</name>
@@ -16822,9 +16822,15 @@ These are protected write (P) bits, which means that write access by the bits is
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>BSY</name>
-              <description>Busy</description>
+              <name>BSY1</name>
+              <description>Bank 1 busy</description>
               <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>BSY2</name>
+              <description>Bank 2 busy</description>
+              <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -16870,7 +16876,6 @@ These are protected write (P) bits, which means that write access by the bits is
               <bitWidth>10</bitWidth>
             </field>
             <field>
-            <field>
               <name>BKER</name>
               <description>Bank selection for erase operation</description>
               <bitOffset>13</bitOffset>
@@ -16882,6 +16887,7 @@ These are protected write (P) bits, which means that write access by the bits is
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+            <field>
               <name>STRT</name>
               <description>Start</description>
               <bitOffset>16</bitOffset>
@@ -17012,7 +17018,7 @@ These are protected write (P) bits, which means that write access by the bits is
               <name>ADDR_ECC</name>
               <description>ECC fail address</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>15</bitWidth>
+              <bitWidth>14</bitWidth>
               <access>read-only</access>
             </field>
             <field>
@@ -29195,9 +29201,8 @@ Note: When PRESCALER is programmed with a value different of the allowed ones, p
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>I2S2SEL</name>
-              <description>I2S1 clock source
-              selection</description>
+              <name>I2C2I2S1SEL</name>
+              <description>I2C2/I2S1 clock source selection</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
@@ -53793,7 +53798,7 @@ This bit is set by software to enable the embedded pull-down on DP and DM lines.
       <baseAddress>0x40010030</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x400</size>
+        <size>0x8</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2024 STMicroelectronics.
+Copyright (c) 2025 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2024 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G070</name>
-  <version>1.9</version>
+  <version>2.2</version>
   <description>STM32G070</description>
   <cpu>
     <name>CM0</name>
@@ -4049,6 +4049,53 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
             </field>
           </fields>
         </register>
+		<register>
+          <name>ECCR2</name>
+          <displayName>ECCR2</displayName>
+          <description>Flash ECC register 2</description>
+          <addressOffset>0x01C</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ADDR_ECC</name>
+              <description>ECC fail address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>14</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SYSF_ECC</name>
+              <description>ECC fail for Corrected ECC Error or
+              Double ECC Error in info block</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ECCIE</name>
+              <description>ECC correction interrupt
+              enable</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ECCC</name>
+              <description>ECC correction</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ECCD</name>
+              <description>ECC detection</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>	
         <register>
           <name>OPTR</name>
           <displayName>OPTR</displayName>
@@ -5128,13 +5175,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>GPIOEEN</name>
-              <description>I/O port E clock enable during Sleep
-              mode</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>GPIOFEN</name>
               <description>I/O port F clock enable during Sleep
@@ -5158,12 +5198,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <name>DMA1EN</name>
               <description>DMA1 clock enable</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>DMA2EN</name>
-              <description>DMA2 clock enable</description>
-              <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5197,12 +5231,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>TIM4EN</name>
-              <description>TIM4 timer clock enable</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>TIM6EN</name>
               <description>TIM6 timer clock enable</description>
@@ -5214,19 +5242,7 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <description>TIM7 timer clock enable</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>			
-			<field>
-              <name>USART5EN</name>
-              <description>USART5EN</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>USART6EN</name>
-              <description>USART6EN</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>			
+            </field>						
             <field>
               <name>RTCAPBEN</name>
               <description>RTC APB clock enable</description>
@@ -5239,22 +5255,10 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>USBEN</name>
-              <description>USBEN</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>SPI2EN</name>
               <description>SPI2 clock enable</description>
               <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>SPI3EN</name>
-              <description>SPI3 clock enable</description>
-              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5285,12 +5289,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <name>I2C2EN</name>
               <description>I2C2 clock enable</description>
               <bitOffset>22</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>I2C3EN</name>
-              <description>I2C3 clock enable</description>
-              <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5413,13 +5411,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>GPIOESMEN</name>
-              <description>I/O port E clock enable during Sleep
-              mode</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>GPIOFSMEN</name>
               <description>I/O port F clock enable during Sleep
@@ -5444,13 +5435,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <description>DMA1 clock enable during Sleep
               mode</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>DMA2SMEN</name>
-              <description>DMA2 clock enable during Sleep
-              mode</description>
-              <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5493,13 +5477,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>TIM4SMEN</name>
-              <description>TIM4 timer clock enable during Sleep
-              mode</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>TIM6SMEN</name>
               <description>TIM6 timer clock enable during Sleep
@@ -5513,19 +5490,7 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               mode</description>
               <bitOffset>5</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>			
-			<field>
-              <name>USART5SMEN</name>
-              <description>USART5 clock enable</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>USART6SMEN</name>
-              <description>USART6 clock enable</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>			
+            </field>					
             <field>
               <name>RTCAPBSMEN</name>
               <description>RTC APB clock enable during Sleep
@@ -5540,25 +5505,11 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitOffset>11</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-			<field>
-              <name>USBSMEN</name>
-              <description>USB clock enable during Sleep
-              mode</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
             <field>
               <name>SPI2SMEN</name>
               <description>SPI2 clock enable during Sleep
               mode</description>
               <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>SPI3SMEN</name>
-              <description>SPI3 clock enable during Sleep
-              mode</description>
-              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -5595,14 +5546,7 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               mode</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>
-			<field>
-              <name>I2C3SMEN</name>
-              <description>I2C3 clock enable during Sleep
-              mode</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>          
+            </field>         
             <field>
               <name>DBGSMEN</name>
               <description>Debug support clock enable during Sleep
@@ -5733,9 +5677,8 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>I2S2SEL</name>
-              <description>I2S1 clock source
-              selection</description>
+              <name>I2C2I2S1SEL</name>
+              <description>I2C2/I2S1 clock source selection</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
             </field>           
@@ -5758,35 +5701,6 @@ Note: The software is allowed to write this bit only when ADSTART=0 (which ensur
               <description>ADCs clock source
               selection</description>
               <bitOffset>30</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-          </fields>
-        </register>
-		<register>
-          <name>CCIPR2</name>
-          <displayName>CCIPR2</displayName>
-          <description>Peripherals independent clock configuration register 2</description>
-          <addressOffset>0x58</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>I2S1SEL</name>
-              <description>2S1SEL</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-             <field>
-              <name>I2S2SEL</name>
-              <description>I2S2SEL</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>			
-            <field>
-              <name>USBSEL</name>
-              <description>USBSEL</description>
-              <bitOffset>12</bitOffset>
               <bitWidth>2</bitWidth>
             </field>
           </fields>
@@ -17032,7 +16946,6 @@ Refer to CC1OF description</description>
           <description>event generation register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
-          <access>write-only</access>
           <resetValue>0x0000</resetValue>
           <fields>
             <field>
@@ -23974,781 +23887,6 @@ In the default configuration this register is reset on a tamper detection event.
             </fields>
           </register>
         </registers>
-    </peripheral>
-    <peripheral>
-      <name>UCPD1</name>
-      <description>USB Power Delivery interface</description>
-      <groupName>UCPD</groupName>
-      <baseAddress>0x4000A000</baseAddress>
-      <addressBlock>
-        <offset>0x0</offset>
-        <size>0x400</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <interrupt>
-        <name>UCPD1_UCPD2</name>
-        <description>UCPD global interrupt</description>
-        <value>8</value>
-      </interrupt>
-      <registers>
-        <register>
-          <name>CFG1</name>
-          <displayName>CFG1</displayName>
-          <description>UCPD configuration register</description>
-          <addressOffset>0x0</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>HBITCLKDIV</name>
-              <description>HBITCLKDIV</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>6</bitWidth>
-            </field>
-            <field>
-              <name>IFRGAP</name>
-              <description>IFRGAP</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-            <field>
-              <name>TRANSWIN</name>
-              <description>TRANSWIN</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-            <field>
-              <name>PSC_USBPDCLK</name>
-              <description>PSC_USBPDCLK</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>RXORDSETEN</name>
-              <description>RXORDSETEN</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>9</bitWidth>
-            </field>
-            <field>
-              <name>TXDMAEN</name>
-              <description>TXDMAEN</description>
-              <bitOffset>29</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXDMAEN</name>
-              <description>RXDMAEN:</description>
-              <bitOffset>30</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>UCPDEN</name>
-              <description>UCPDEN</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CFG2</name>
-          <displayName>CFG2</displayName>
-          <description>UCPD configuration register 2</description>
-          <addressOffset>0x4</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RXFILTDIS</name>
-              <description>RXFILTDIS</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXFILT2N3</name>
-              <description>RXFILT2N3</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FORCECLK</name>
-              <description>FORCECLK</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>WUPEN</name>
-              <description>WUPEN</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CFG3</name>
-          <displayName>CFG3</displayName>
-          <description>UCPD configuration register 3</description>
-          <addressOffset>0x8</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TRIM1_NG_CCRPD</name>
-              <description>TRIM1_NG_CCRPD</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>TRIM1_NG_CC1A5</name>
-              <description>TRIM1_NG_CC1A5</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-            <field>
-              <name>TRIM1_NG_CC3A0</name>
-              <description>TRIM1_NG_CC3A0</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>TRIM2_NG_CCRPD</name>
-              <description>TRIM2_NG_CCRPD</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>TRIM2_NG_CC1A5</name>
-              <description>TRIM2_NG_CC1A5</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>5</bitWidth>
-            </field>
-            <field>
-              <name>TRIM2_NG_CC3A0</name>
-              <description>TRIM2_NG_CC3A0</description>
-              <bitOffset>25</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CR</name>
-          <displayName>CR</displayName>
-          <description>UCPD control register</description>
-          <addressOffset>0xC</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXMODE</name>
-              <description>TXMODE</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>TXSEND</name>
-              <description>TXSEND</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXHRST</name>
-              <description>TXHRST</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXMODE</name>
-              <description>RXMODE</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PHYRXEN</name>
-              <description>PHYRXEN</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PHYCCSEL</name>
-              <description>PHYCCSEL</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>ANASUBMODE</name>
-              <description>ANASUBMODE</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>ANAMODE</name>
-              <description>ANAMODE</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CCENABLE</name>
-              <description>CCENABLE</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>DBATTEN</name>
-              <description>DBATTEN</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FRSRXEN</name>
-              <description>FRSRXEN</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FRSTX</name>
-              <description>FRSTX</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RDCH</name>
-              <description>RDCH</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CC1TCDIS</name>
-              <description>CC1TCDIS</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CC2TCDIS</name>
-              <description>CC2TCDIS</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IMR</name>
-          <displayName>IMR</displayName>
-          <description>UCPD Interrupt Mask Register</description>
-          <addressOffset>0x10</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXISIE</name>
-              <description>TXISIE</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGDISCIE</name>
-              <description>TXMSGDISCIE</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGSENTIE</name>
-              <description>TXMSGSENTIE</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGABTIE</name>
-              <description>TXMSGABTIE</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HRSTDISCIE</name>
-              <description>HRSTDISCIE</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HRSTSENTIE</name>
-              <description>HRSTSENTIE</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXUNDIE</name>
-              <description>TXUNDIE</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXNEIE</name>
-              <description>RXNEIE</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXORDDETIE</name>
-              <description>RXORDDETIE</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXHRSTDETIE</name>
-              <description>RXHRSTDETIE</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXOVRIE</name>
-              <description>RXOVRIE</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXMSGENDIE</name>
-              <description>RXMSGENDIE</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPECEVT1IE</name>
-              <description>TYPECEVT1IE</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPECEVT2IE</name>
-              <description>TYPECEVT2IE</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FRSEVTIE</name>
-              <description>FRSEVTIE</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SR</name>
-          <displayName>SR</displayName>
-          <description>UCPD Status Register</description>
-          <addressOffset>0x14</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXIS</name>
-              <description>TXIS</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGDISC</name>
-              <description>TXMSGDISC</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGSENT</name>
-              <description>TXMSGSENT</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGABT</name>
-              <description>TXMSGABT</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HRSTDISC</name>
-              <description>HRSTDISC</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HRSTSENT</name>
-              <description>HRSTSENT</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXUND</name>
-              <description>TXUND</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXNE</name>
-              <description>RXNE</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXORDDET</name>
-              <description>RXORDDET</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXHRSTDET</name>
-              <description>RXHRSTDET</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXOVR</name>
-              <description>RXOVR</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXMSGEND</name>
-              <description>RXMSGEND</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXERR</name>
-              <description>RXERR</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPECEVT1</name>
-              <description>TYPECEVT1</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPECEVT2</name>
-              <description>TYPECEVT2</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPEC_VSTATE_CC1</name>
-              <description>TYPEC_VSTATE_CC1</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>TYPEC_VSTATE_CC2</name>
-              <description>TYPEC_VSTATE_CC2</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>FRSEVT</name>
-              <description>FRSEVT</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ICR</name>
-          <displayName>ICR</displayName>
-          <description>UCPD Interrupt Clear Register</description>
-          <addressOffset>0x18</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXMSGDISCCF</name>
-              <description>TXMSGDISCCF</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGSENTCF</name>
-              <description>TXMSGSENTCF</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXMSGABTCF</name>
-              <description>TXMSGABTCF</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HRSTDISCCF</name>
-              <description>HRSTDISCCF</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>HRSTSENTCF</name>
-              <description>HRSTSENTCF</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TXUNDCF</name>
-              <description>TXUNDCF</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXORDDETCF</name>
-              <description>RXORDDETCF</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXHRSTDETCF</name>
-              <description>RXHRSTDETCF</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXOVRCF</name>
-              <description>RXOVRCF</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXMSGENDCF</name>
-              <description>RXMSGENDCF</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPECEVT1CF</name>
-              <description>TYPECEVT1CF</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>TYPECEVT2CF</name>
-              <description>TYPECEVT2CF</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>FRSEVTCF</name>
-              <description>FRSEVTCF</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>TX_ORDSET</name>
-          <displayName>TX_ORDSET</displayName>
-          <description>UCPD Tx Ordered Set Type
-          Register</description>
-          <addressOffset>0x1C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXORDSET</name>
-              <description>TXORDSET</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>20</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>TX_PAYSZ</name>
-          <displayName>TX_PAYSZ</displayName>
-          <description>UCPD Tx Paysize Register</description>
-          <addressOffset>0x20</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXPAYSZ</name>
-              <description>TXPAYSZ</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>TXDR</name>
-          <displayName>TXDR</displayName>
-          <description>UCPD Tx Data Register</description>
-          <addressOffset>0x24</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>TXDATA</name>
-              <description>TXDATA</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RX_ORDSET</name>
-          <displayName>RX_ORDSET</displayName>
-          <description>UCPD Rx Ordered Set Register</description>
-          <addressOffset>0x28</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RXORDSET</name>
-              <description>RXORDSET</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>RXSOP3OF4</name>
-              <description>RXSOP3OF4</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>RXSOPKINVALID</name>
-              <description>RXSOPKINVALID</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RX_PAYSZ</name>
-          <displayName>RX_PAYSZ</displayName>
-          <description>UCPD Rx Paysize Register</description>
-          <addressOffset>0x2C</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RXPAYSZ</name>
-              <description>RXPAYSZ</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>10</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RXDR</name>
-          <displayName>RXDR</displayName>
-          <description>UCPD Receive Data Register</description>
-          <addressOffset>0x30</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RXDATA</name>
-              <description>RXDATA</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RX_ORDEXT1</name>
-          <displayName>RX_ORDEXT1</displayName>
-          <description>UCPD Rx Ordered Set Extension
-          Register</description>
-          <addressOffset>0x34</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RXSOPX1</name>
-              <description>RXSOPX1</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>20</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>RX_ORDEXT2</name>
-          <displayName>RX_ORDEXT2</displayName>
-          <description>UCPD Rx Ordered Set Extension
-          Register</description>
-          <addressOffset>0x38</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <resetValue>0x00000000</resetValue>
-          <fields>
-            <field>
-              <name>RXSOPX2</name>
-              <description>RXSOPX2</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>20</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IPVER</name>
-          <displayName>IPVER</displayName>
-          <description>UCPD IP ID register</description>
-          <addressOffset>0x3F4</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00000010</resetValue>
-          <fields>
-            <field>
-              <name>IPVER</name>
-              <description>IPVER</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IPID</name>
-          <displayName>IPID</displayName>
-          <description>UCPD IP ID register</description>
-          <addressOffset>0x3F8</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0x00150021</resetValue>
-          <fields>
-            <field>
-              <name>IPID</name>
-              <description>IPID</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>MID</name>
-          <displayName>MID</displayName>
-          <description>UCPD IP ID register</description>
-          <addressOffset>0x3FC</addressOffset>
-          <size>0x20</size>
-          <access>read-only</access>
-          <resetValue>0xA3C5DD01</resetValue>
-          <fields>
-            <field>
-              <name>IPID</name>
-              <description>IPID</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral derivedFrom="UCPD1">
-      <name>UCPD2</name>
-      <baseAddress>0x4000A400</baseAddress>
     </peripheral>
     <peripheral>
       <name>LPTIM1</name>

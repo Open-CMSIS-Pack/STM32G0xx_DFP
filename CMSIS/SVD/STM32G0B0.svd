@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--
-Copyright (c) 2024 STMicroelectronics.
+Copyright (c) 2025 STMicroelectronics.
 
  SPDX-License-Identifier: Apache-2.0
 
@@ -20,7 +20,7 @@ Copyright (c) 2024 STMicroelectronics.
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
   <name>STM32G0B0</name>
-  <version>1.6</version>
+  <version>1.9</version>
   <description>STM32G0B0</description>
   <cpu>
     <name>CM0</name>
@@ -10441,6 +10441,53 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
             </field>
           </fields>
         </register>
+		<register>
+          <name>ECCR2</name>
+          <displayName>ECCR2</displayName>
+          <description>Flash ECC register 2</description>
+          <addressOffset>0x01C</addressOffset>
+          <size>0x20</size>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ADDR_ECC</name>
+              <description>ECC fail address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>14</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>SYSF_ECC</name>
+              <description>ECC fail for Corrected ECC Error or
+              Double ECC Error in info block</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ECCIE</name>
+              <description>ECC correction interrupt
+              enable</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ECCC</name>
+              <description>ECC correction</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ECCD</name>
+              <description>ECC detection</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>	
         <register>
           <name>OPTR</name>
           <displayName>OPTR</displayName>
@@ -10532,7 +10579,7 @@ Writing 1 in each bit clears the corresponding overrun flag OFx in the DMAMUX_RG
               <bitWidth>1</bitWidth>
             </field>
           </fields>
-        </register>      
+        </register>    	
         <register>
           <name>WRP1AR</name>
           <displayName>WRP1AR</displayName>
@@ -17911,9 +17958,8 @@ Window value can be updated only when WVU bit is reset.</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>I2S2SEL</name>
-              <description>I2S1 clock source
-              selection</description>
+              <name>I2C2I2S1SEL</name>
+              <description>I2C2/I2S1 clock source selection</description>
               <bitOffset>14</bitOffset>
               <bitWidth>2</bitWidth>
             </field>           
@@ -21320,7 +21366,7 @@ It is not used in SPI mode.</description>
       <baseAddress>0x40010000</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x100</size>
+        <size>0xF8</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>		
@@ -31373,7 +31419,6 @@ Refer to CC1OF description</description>
           <description>event generation register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
-          <access>write-only</access>
           <resetValue>0x0000</resetValue>
           <fields>
 		  <field>
@@ -37961,6 +38006,11 @@ Note: When PRESCALER is programmed with a value different of the allowed ones, p
           <size>0x400</size>
           <usage>registers</usage>
         </addressBlock>
+		<interrupt>
+          <name>UCPD1_UCPD2_USB</name>
+          <description>UCPD and USB global interrupt</description>
+          <value>8</value>
+        </interrupt>
         <registers>
           <register>
             <name>USB_CHEP0R</name>
@@ -40859,7 +40909,7 @@ This bit is set by software to enable the embedded pull-down on DP and DM lines.
       <baseAddress>0x40010030</baseAddress>
       <addressBlock>
         <offset>0x0</offset>
-        <size>0x400</size>
+        <size>0x8</size>
         <usage>registers</usage>
       </addressBlock>
       <registers>
