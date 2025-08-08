@@ -18,6 +18,7 @@
       Updated documentation references
       Device support:
       - Updated SVD files to version 2.0 from STMicroelectronics
+      - Updated debug configuration files (MCU APBx Freeze registers)
       Updated Templates:
       - Added DWARF-5 debug information
       - Added generated output files
@@ -91,21 +92,12 @@
 
   <devices>
     <family Dfamily="STM32G0 Series" Dvendor="STMicroelectronics:13">
-      <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dclock="64000000" Dfpu="NO_FPU" Dmpu="MPU" Dendian="Little-endian"/>
+      <processor Dcore="Cortex-M0+" DcoreVersion="r0p1" Dclock="64000000" Dfpu="NO_FPU" Dmpu="MPU" Dendian="Little-endian" Ddsp="NO_DSP"/>
 
       <book name="https://developer.arm.com/documentation/dui0662/latest" title="Cortex-M0+ Generic User Guide"/>
 
       <description>
-      The STM32G0 mainstream microcontrollers are based on high-performance Arm Cortex-M0+ 32-bit RISC core operating at up to 64 MHz frequency.
-      Offering a high level of integration, they are suitable for a wide range of applications in consumer, industrial and appliance domains and ready for the Internet of Things (IoT) solutions.
-       - Up to 128 Kbytes of Flash memory
-       – 36 Kbytes of SRAM (32 Kbytes with HW parity check)
-       - CRC calculation unit
-       - Up to 60 fast I/Os
-       - 7-channel DMA controller with flexible mapping
-       - 14 timers (two 112 MHz capable): 16-bit for advanced motor control, one 32-bit and five 16-bit general-purpose, two basic 16-bit, two lowpower 16-bit, two watchdogs, SysTick timer
-       - Calendar RTC with alarm and periodic wakeup from Stop/Standby
-       - 96-bit unique ID
+High-performance STM32G0 MCUs with Arm Cortex-M0+ core 32-bit RISC core operating at up to 64 MHz frequency.
       </description>
 
       <sequences>
@@ -167,11 +159,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0454-stm32g0x0-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x0 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g030c6.pdf" title="STM32G030x6/x8 Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0x00601832;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00070800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x2000" default="0"/>
@@ -237,11 +229,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g031c6.pdf" title="STM32G031x4/x6/x8 Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x2000" default="0"/>
@@ -428,11 +420,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g041c8.pdf" title="STM32G041x6/x8 Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x2000" default="0"/>
@@ -562,11 +554,11 @@
        <book name="https://www.st.com/resource/en/reference_manual/rm0454-stm32g0x0-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x0 Reference Manual"/>
        <book name="https://www.st.com/resource/en/datasheet/stm32g050c6.pdf" title="STM32G050x6/x8 Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0x00601832;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00070800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x4800" default="0"/>
@@ -624,11 +616,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g051c6.pdf" title="STM32G051x6/x8 Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x4800" default="0"/>
@@ -750,11 +742,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g061c6.pdf" title="STM32G061x6/x8 Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x4800" default="0"/>
@@ -876,11 +868,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0454-stm32g0x0-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x0 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g070cb.pdf" title="STM32G070CB/KB/RB Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0x00601832;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00070800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
@@ -921,11 +913,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g071c8.pdf" title="STM32G071x8/xB Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
@@ -1103,11 +1095,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g081cb.pdf" title="STM32G081xB Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
@@ -1212,11 +1204,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0454-stm32g0x0-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x0 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g0b0ce.pdf" title="STM32G0B0KE/CE/RE/VE Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x0.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0x00601832;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00070800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
@@ -1265,11 +1257,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g0b1cc.pdf" title="STM32G0B1xC/xE Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
@@ -1632,11 +1624,11 @@
         <book name="https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf" title="STM32G0x1 Reference Manual"/>
         <book name="https://www.st.com/resource/en/datasheet/stm32g0c1cc.pdf" title="STM32G0C1xC/xE Data Sheet"/>
 
-        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.0">
+        <debugvars configfile="CMSIS/Debug/STM32G0x1.dbgconf" version="1.0.1">
           // Default values for variables in debug sequences are configured with a *.dbgconf file in the user project
           __var DbgMCU_CR        = 0x00000006;   // DBGMCU_CR:       DBGMCU configuration register
-          __var DbgMCU_APB_Fz1   = 0x00000000;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
-          __var DbgMCU_APB_Fz2   = 0x00000000;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
+          __var DbgMCU_APB_Fz1   = 0xC0201833;   // DBGMCU_APB_FZ1:  DBGMCU APB freeze register 1
+          __var DbgMCU_APB_Fz2   = 0x00078800;   // DBGMCU_APB_FZ2:  DBGMCU APB freeze register 2
         </debugvars>
 
         <algorithm name="CMSIS/Flash/STM32G0xx_OTP.FLM"    start="0x1FFF7000" size="0x00000400" RAMstart="0x20000000" RAMsize="0x8000" default="0"/>
