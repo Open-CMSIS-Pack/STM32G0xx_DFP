@@ -13,15 +13,8 @@
   </licenseSets>
 
   <releases>
-    <release version="2.0.3-dev">
+    <release version="2.1.1-dev">
       Active development ...
-      Updated documentation references
-      Device support:
-      - Updated SVD files to version 2.0 from STMicroelectronics
-      - Updated debug configuration files (MCU APBx Freeze registers)
-      Updated Templates:
-      - Added DWARF-5 debug information
-      - Added generated output files
     </release>
     <release version="1.5.0" date="2024-02-02">
       Updated STM32Cube FW to STM32Cube_FW_G0_V1.6.0 (HAL V1.4.5).
